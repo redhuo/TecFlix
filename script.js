@@ -11,7 +11,7 @@ function getVideos() {
         for (video of videos) {
             console.log(video.id.videoId)
             //document.write(video.snippet.tittle)
-            //var idVideo = video.id.videoId
+            var idVideo = video.id.videoId
             videoContainer.innerHTML += `
             <h2 class= "lead">${video.snippet.title}</h2>
             <img src="${video.snippet.thumbnails.medium.url}">
