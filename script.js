@@ -15,9 +15,7 @@ function getVideos() {
             videoContainer.innerHTML += `
             <h2 class= "lead">${video.snippet.title}</h2>
             <img src="${video.snippet.thumbnails.medium.url}">
-            <form action="reproductor.html?id=${video.id.videoId}" method="post">
-                <input class="btn btn-secondary p-2" type="submit" value="Play">
-            </form>
+            <a type="button" class="btn btn-dark" href="http://127.0.0.1:5500/reproductor.html?id=${idVideo}">Play</a>
             `
         }
     })
