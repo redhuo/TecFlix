@@ -8,12 +8,13 @@ const styles = StyleSheet.create({
   }
 })
 
-const PlaylistList = ({ route, data }) => {
+const PlaylistList = ({ route, data, onPress }) => {
 
   const renderItem = ({ item }) => {
     return (
       <PlaylistElement
         playlist={item}
+        onPress={() => onPress(item)}
       />
     )
   }

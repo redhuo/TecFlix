@@ -34,10 +34,15 @@ const styles = StyleSheet.create({
 
 const Library = ({ route }) => {
 
+  const onPress = playlist => {
+    console.log(playlist)
+  }
+
   return (
     <View style={styles.container}>
       <PlaylistList
         data={data}
+        onPress={onPress}
       />
     </View>
   )

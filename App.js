@@ -7,7 +7,6 @@ import Search from './src/views/Search';
 import Playlist from './src/views/Playlist';
 import Library from './src/views/Library';
 import { colors } from './colors';
-import { Button } from 'react-native';
 import HeaderButton from './src/UI/HeaderButton';
 
 const getIconName = view => {
