@@ -4,12 +4,22 @@ import PlaylistList from '../components/PlaylistList';
 const data = [
   {
     id: 1,
-    name: 'Favoritos',
+    name: 'Favorites',
     songs: 15,
   },
   {
     id: 2,
-    name: 'Rancheras',
+    name: 'Hip-hop',
+    songs: 30,
+  },
+  {
+    id: 3,
+    name: 'Rap',
+    songs: 15,
+  },
+  {
+    id: 4,
+    name: 'Salsa',
     songs: 30,
   }
 ]
@@ -27,7 +37,7 @@ const Library = ({ route }) => {
   return (
     <View style={styles.container}>
       <PlaylistList
-        playlist={data}
+        data={data}
       />
     </View>
   )

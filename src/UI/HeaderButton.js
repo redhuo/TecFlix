@@ -10,11 +10,11 @@ const styles = StyleSheet.create({
 
 const HeaderButton =  ({ icon, onPress }) => {
   return (
-    <TouchableHighlight onPress={onPress} underlayColor="white">
-      <View style={styles.container}>
+    <View style={styles.container}>
+      <TouchableHighlight onPress={onPress} underlayColor={colors.secondaryColor}>
         <Ionicons name={icon} color={colors.textColor} size={30} />
-      </View>
-    </TouchableHighlight>
+      </TouchableHighlight>   
+    </View>   
   ) 
 }
 

@@ -46,7 +46,7 @@ const HomeTabs = () => {
           paddingBottom: 10,
           height: 60,
           marginTop: 0,
-          borderTopWidth: 0
+          borderTopWidth: 0,
         },
         tabBarActiveTintColor: colors.textColor,
       })}

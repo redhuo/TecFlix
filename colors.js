@@ -4,5 +4,6 @@ export const colors = {
   tertiary: '#282828',
   primaryTint: '#230046',
   secondaryTint: '#320064',
-  textColor: 'white'
+  textColor: 'white',
+  secondaryColor: '#969696'
 }
