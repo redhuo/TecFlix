@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native';
 
-const Home = ({ route }) => {
+const Library = ({ route }) => {
 
   return (
     <View>
@@ -9,4 +9,4 @@ const Home = ({ route }) => {
   )
 }
 
-export default Home;
+export default Library;

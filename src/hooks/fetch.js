@@ -3,7 +3,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'http://192.168.1.5:9000/';
 
-const useAxios = (initParams) => {
+const useAxios = (initParams = null) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -30,7 +30,7 @@ const useAxios = (initParams) => {
     fetchData(params);
   }, [params])
   
-  return [ response, error, loading, setParams ];
+  return { response, error, loading, setParams };
 }
 
 export default useAxios;
