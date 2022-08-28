@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { colors } from '../../colors';
-import Search from './Search';
+import Search from './Search'
 import Library from './Library';
 import HeaderButton from '../UI/HeaderButton';
 
@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 const Home = () => {
   return (
     <Tab.Navigator 
-      initialRouteName='Library'
+      initialRouteName='Search'
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           const iconName = getIconName(route.name)
@@ -27,8 +27,7 @@ const Home = () => {
         },
         headerStyle: {
           backgroundColor: colors.tertiary,
-          elevation: 2,
-          height: 120
+          elevation: 2
         },
         headerTitleStyle: {
           color: colors.textColor,
@@ -52,7 +51,7 @@ const Home = () => {
       <Tab.Screen
         name='Search'
         component={Search}
-        options={{ title: 'Home' }}
+        options={{ title: 'Search' }}
       />
       <Tab.Screen
         name='Library'

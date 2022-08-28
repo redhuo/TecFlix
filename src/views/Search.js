@@ -1,10 +1,50 @@
-import { View, Text } from 'react-native';
+import { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { SearchBar } from 'react-native-elements'
+import { colors } from '../../colors';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: '5%',
+    width: '90%',
+  },
+  searchBar: {
+    backgroundColor: 'transparent'
+  },
+  inputStyle: {
+    backgroundColor: colors.textColor
+  },
+  textStyle: {
+    color: colors.primary
+  }
+})
 
 const Search = ({ route }) => {
 
+  const [isLoading, setIsLoading] = useState(false)
+  const [text, setText] = useState('')
+  const [videos, setVideos] = useState([])
+
+  const onChangeText = query => {
+    setText(query)
+  }
+
+  const onSubmit = () => {
+
+  }
+
   return (
-    <View style={{backgroundColor: 'white'}}>
-      <Text style={{color: 'black'}}>Hola Mundo!</Text>
+    <View style={styles.container}>
+      <SearchBar
+        onChangeText={onChangeText}
+        value={text}
+        placeholder="What do you want to listen to?"
+        containerStyle={styles.searchBar}
+        inputContainerStyle={styles.inputStyle}
+        inputStyle={styles.textStyle}
+        showLoading={isLoading}
+      />
     </View>
   )
 }
