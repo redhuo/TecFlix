@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native'
 import { colors } from '../../colors'
-import image from '../../assets/albumCover.jpg'
+import defaultImage from '../../assets/defaultImage.jpg'
 
 const styles = StyleSheet.create({
   container: {
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 })
 
 const PlaylistElement = ({ route, playlist, onPress }) => {
-  const { name = '', songs = '' } = playlist
+  const { name = '', songs = '', image } = playlist
   return (
     <Pressable
       style={styles.container}
@@ -36,7 +36,7 @@ const PlaylistElement = ({ route, playlist, onPress }) => {
       <View style={styles.container}>
         <Image
           style={styles.image}
-          source={image}
+          source={image || defaultImage}
           resizeMode="stretch"
         />
         <Text style={styles.title}>{name}</Text>
