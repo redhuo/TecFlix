@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 import Search from './src/views/Search';
 import Playlist from './src/views/Playlist';
 import Library from './src/views/Library';
+import { colors } from './colors';
 
 const getIconName = view => {
   switch(view) {
@@ -25,8 +26,28 @@ const HomeTabs = () => {
         tabBarIcon: ({ color, size }) => {
           const iconName = getIconName(route.name)
           return <Ionicons name={iconName} size={size} color={color} />
-        }
+        },
+        headerStyle: {
+          backgroundColor: colors.tertiary,
+          elevation: 2,
+        },
+        headerTitleStyle: {
+          color: colors.textColor,
+          fontWeight: 'bold' 
+        },
+        tabBarStyle: { 
+          backgroundColor: colors.tertiary,
+          elevation: 5,
+          paddingTop: 5,
+          paddingBottom: 10,
+          height: 60,
+          marginTop: 0,
+        },
+        tabBarActiveTintColor: colors.textColor
       })}
+      sceneContainerStyle={{
+        backgroundColor: colors.secondary
+      }}
     >
       <Tab.Screen
         name='Search'
@@ -49,7 +70,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="light" backgroundColor={colors.primary}/>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
