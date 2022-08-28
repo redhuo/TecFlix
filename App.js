@@ -7,6 +7,8 @@ import Search from './src/views/Search';
 import Playlist from './src/views/Playlist';
 import Library from './src/views/Library';
 import { colors } from './colors';
+import { Button } from 'react-native';
+import HeaderButton from './src/UI/HeaderButton';
 
 const getIconName = view => {
   switch(view) {
@@ -22,6 +24,7 @@ const Tab = createBottomTabNavigator();
 const HomeTabs = () => {
   return (
     <Tab.Navigator 
+      initialRouteName='Library'
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           const iconName = getIconName(route.name)
@@ -30,6 +33,7 @@ const HomeTabs = () => {
         headerStyle: {
           backgroundColor: colors.tertiary,
           elevation: 2,
+          height: 120
         },
         headerTitleStyle: {
           color: colors.textColor,
@@ -37,13 +41,14 @@ const HomeTabs = () => {
         },
         tabBarStyle: { 
           backgroundColor: colors.tertiary,
-          elevation: 5,
+          elevation: 2,
           paddingTop: 5,
           paddingBottom: 10,
           height: 60,
           marginTop: 0,
+          borderTopWidth: 0
         },
-        tabBarActiveTintColor: colors.textColor
+        tabBarActiveTintColor: colors.textColor,
       })}
       sceneContainerStyle={{
         backgroundColor: colors.secondary
@@ -58,7 +63,8 @@ const HomeTabs = () => {
         name='Library'
         component={Library}
         options={{
-          title: 'My Library'
+          title: 'Your Library',
+          headerRight: () => <HeaderButton icon='add-circle-outline' onPress={() => {}} />
         }}
       />
     </Tab.Navigator>
@@ -70,7 +76,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <>
-      <StatusBar style="light" backgroundColor={colors.primary}/>
+      <StatusBar style="light" backgroundColor={colors.secondary}/>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
