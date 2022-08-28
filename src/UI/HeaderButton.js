@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons'
-import { TouchableHighlight, View, StyleSheet } from "react-native"
+import { View, StyleSheet, Pressable } from "react-native"
 import { colors } from '../../colors'
 
 const styles = StyleSheet.create({
@@ -11,10 +11,13 @@ const styles = StyleSheet.create({
 const HeaderButton =  ({ icon, onPress }) => {
   return (
     <View style={styles.container}>
-      <TouchableHighlight onPress={onPress} underlayColor={colors.secondaryColor}>
+      <Pressable 
+        onPress={onPress}
+        android_ripple={{ color: colors.secondaryColor }}
+      >
         <Ionicons name={icon} color={colors.textColor} size={30} />
-      </TouchableHighlight>   
-    </View>   
+      </Pressable>     
+    </View>
   ) 
 }
 
