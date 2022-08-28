@@ -9,6 +9,20 @@ import Library from './src/views/Library';
 import { colors } from './colors';
 import HeaderButton from './src/UI/HeaderButton';
 
+const styleOptions = {
+  headerStyle: {
+    backgroundColor: colors.tertiary
+  },
+  headerTitleStyle: {
+    fontWeight: "bold",
+    color: colors.textColor,
+  },
+  headerTintColor: colors.textColor,
+  contentStyle: {
+    backgroundColor: colors.secondary
+  }
+}
+
 const getIconName = view => {
   switch(view) {
     case 'Search':
@@ -88,6 +102,7 @@ const App = () => {
           <Stack.Screen
             name="Playlist"
             component={Playlist}
+            options={styleOptions}
           />
         </Stack.Navigator>       
       </NavigationContainer> 

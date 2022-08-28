@@ -1,4 +1,5 @@
 import { View, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import PlaylistList from '../components/PlaylistList';
 
 const data = [
@@ -34,8 +35,10 @@ const styles = StyleSheet.create({
 
 const Library = ({ route }) => {
 
+  const navigation = useNavigation()
+
   const onPress = playlist => {
-    console.log(playlist)
+    navigation.navigate('Playlist', { id: playlist.id })
   }
 
   return (
