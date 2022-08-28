@@ -30,10 +30,6 @@ const Search = ({ route }) => {
     setText(query)
   }
 
-  const onSubmit = () => {
-
-  }
-
   return (
     <View style={styles.container}>
       <SearchBar
