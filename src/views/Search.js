@@ -8,6 +8,9 @@ import { colors } from '../../colors';
 import SearchBarPersonal from './SearchBar';
 import DropDownPicker from 'react-native-dropdown-picker';
 
+/* Comnponente que se va a encargar de mostrar la pestana de busqueda avanzada de la aplicacion, 
+en este caso se buscan videos de la plataforma de YouTube */
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

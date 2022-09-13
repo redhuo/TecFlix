@@ -2,6 +2,8 @@ import React from 'react';
 import { ScrollView, View } from 'react-native';
 import VideoListItem from './VideoListItem';
 
+/* Componente que va a mostrar la lista de todos los videos de la busqueda avanzada con su respectiva informacion */
+
 const VideoList = ({ videos }) => {
   const videoItems = videos.map(video => (
     <VideoListItem

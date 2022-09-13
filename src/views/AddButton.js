@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button } from 'react-native-elements';
 
-
+/*
+Boton que se encarga de anadir canciones a las playlist
+*/
 const AddButton = ({title,canal, videoId }) => {
 
 return(

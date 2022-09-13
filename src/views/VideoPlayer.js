@@ -2,6 +2,10 @@ import React, { useState, useCallback, useRef } from "react";
 import { Button, View, Alert } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 
+/* Componente que va a servir como el reproductor de videos de la aplicacion, sus paramentros son:
+id del video: idVideo
+ */
+
 const  Player= ({ videoId }) => {
   console.log(videoId)
   const [playing, setPlaying] = useState(false);

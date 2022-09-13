@@ -3,6 +3,29 @@ import { useState, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import PlaylistList from '../components/PlaylistList';
 
+/* Componente que se va a encargar de mostrar las librerias de usuario*/
+
+var tipos;
+var URL = "http://192.168.0.3:3000/bibliotecaTipos";
+    var headers = {
+      'Content-Type': 'application/json'
+    };
+    
+    var Data ={
+      idUsuario: "9"
+    };
+
+  fetch(URL,{
+    method:'POST',
+    headers:headers,
+    body: JSON.stringify(Data) //convert data to JSON
+  })
+  .then((response)=>response.json()) //check response type of API (CHECK OUTPUT OF DATA IS IN JSON)
+  .then(data => tipos = data) 
+  .catch((error)=>{
+      alert("Error Occured" + error);
+  })
+console.log(tipos);
 const data = [
   {
     id: 1,
@@ -11,7 +34,7 @@ const data = [
   },
   {
     id: 2,
-    name: 'Hip-hop',
+    name: 'Rock',
     songs: 30,
   },
   {

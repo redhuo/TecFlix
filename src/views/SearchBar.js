@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
 
+/* Componente que va a servir como la barra de busqueda en la busqueda avanzada */
+
 class SearchBar extends Component {
   state = { term: '' };
 

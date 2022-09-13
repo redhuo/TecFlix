@@ -7,7 +7,9 @@ import HeaderButton from '../UI/HeaderButton';
 import { useNavigation } from '@react-navigation/native';
 import AgregarPlaylist from './NewPlaylist'
 
-
+/*
+Componente de inicio de la aplicacion, esto se va a mostrar al iniciar la aplicacion
+*/
 const getIconName = view => {
   switch(view) {
     case 'Search':

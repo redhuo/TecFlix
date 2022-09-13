@@ -4,6 +4,8 @@ import { Card } from 'react-native-elements';
 import VideoPlayer from './VideoPlayer'
 import AddButton from './AddButton';
 
+/* Componente que va a mostrar cada elemento dentro de la lista de la busqueda avanzada */
+
 const VideoListItem = ({ video }) => {
   const {
     cardStyle,

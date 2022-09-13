@@ -2,6 +2,8 @@ import React from 'react';
 import { ScrollView, View } from 'react-native';
 import VideoListItem from './PlayListVideoListItem';
 
+/* Componente que se va a encargar de crear una lista con todos los videos dentro de la playlist */
+
 const VideoList = ({ videos }) => {
   console.log(videos)
   const videoItems = videos.map(video => (
