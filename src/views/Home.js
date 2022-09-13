@@ -4,6 +4,9 @@ import { colors } from '../../colors';
 import Search from './Search'
 import Library from './Library';
 import HeaderButton from '../UI/HeaderButton';
+import { useNavigation } from '@react-navigation/native';
+import AgregarPlaylist from './NewPlaylist'
+
 
 const getIconName = view => {
   switch(view) {
@@ -14,9 +17,11 @@ const getIconName = view => {
   }
 }
 
+
 const Tab = createBottomTabNavigator();
 
 const Home = () => {
+  const navigation = useNavigation()
   return (
     <Tab.Navigator 
       initialRouteName='Search'
@@ -58,7 +63,10 @@ const Home = () => {
         component={Library}
         options={{
           title: 'Your Library',
-          headerRight: () => <HeaderButton icon='add-circle-outline' onPress={() => {}} />
+          headerRight: () => <HeaderButton icon='add-circle-outline' onPress={() => {
+            alert("Agregar un Playlist nuevo");
+            navigation.navigate('NewPlaylist')
+          }} />
         }}
       />
     </Tab.Navigator>

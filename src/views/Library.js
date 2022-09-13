@@ -1,4 +1,5 @@
 import { View, StyleSheet } from 'react-native';
+import { useState, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import PlaylistList from '../components/PlaylistList';
 
@@ -34,11 +35,35 @@ const styles = StyleSheet.create({
 })
 
 const Library = ({ route }) => {
+  const [videos, setVideos] = useState([])
 
   const navigation = useNavigation()
 
   const onPress = playlist => {
-    navigation.navigate('Playlist', { id: playlist.id })
+    var URL = "http://192.168.0.3:3000/bibliotecaVideos";
+    var headers = {
+      'Content-Type': 'application/json'
+    };
+    
+    var Data ={
+      nombre: "rock"
+    };
+
+  fetch(URL,{
+    method:'POST',
+    headers:headers,
+    body: JSON.stringify(Data) //convert data to JSON
+  })
+  .then((response)=>response.json()) //check response type of API (CHECK OUTPUT OF DATA IS IN JSON)
+  .then((response) =>{
+    setVideos(response)
+    //console.log(videos)
+    
+  })
+  .catch((error)=>{
+      alert("Error Occured" + error);
+  })
+    navigation.navigate('Playlist', {videos: videos})
   }
 
   return (

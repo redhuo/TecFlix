@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Playlist from './src/views/Playlist';
+import NewPlaylist from './src/views/NewPlaylist';
 import { colors } from './colors';
 import Home from './src/views/Home';
 
@@ -37,6 +38,11 @@ const App = () => {
           <Stack.Screen
             name="Playlist"
             component={Playlist}
+            options={styleOptions}
+          />
+          <Stack.Screen
+            name="NewPlaylist"
+            component={NewPlaylist}
             options={styleOptions}
           />
         </Stack.Navigator>       
